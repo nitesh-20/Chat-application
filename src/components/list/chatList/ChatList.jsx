@@ -58,4 +58,4 @@ const ChatList = () => {
   )
 }
 
-export default ChatList
+export default ChatList;
