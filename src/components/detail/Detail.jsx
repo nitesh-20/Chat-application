@@ -46,13 +46,6 @@ const Detail = () => {
               <img src="https://img.freepik.com/premium-vector/coder-developer-concentrated-working-project-developing-programming-coding-technologies_569013-336.jpg" alt="" />
               <span>photo_2024_2.png</span>
               </div>
-            <img src="./download.png" alt=""  className="icon"/>
-            </div>
-            <div className="photoItem">
-              <div className="photoDetail">
-              <img src="https://img.freepik.com/premium-vector/coder-developer-concentrated-working-project-developing-programming-coding-technologies_569013-336.jpg" alt="" />
-              <span>photo_2024_2.png</span>
-              </div>
             <img src="./download.png" alt="" className="icon"/>
             </div>
             <div className="photoItem">
@@ -70,8 +63,8 @@ const Detail = () => {
             <img src="./arrowUp.png" alt="" />
           </div>
         </div>
-        <button>Block user</button>
       </div>
+        <button>Block user</button>
     </div>
   )
 }
