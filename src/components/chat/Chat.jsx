@@ -72,6 +72,7 @@ const Chat = () => {
         </div>
         <div className="message own">
           <div className="texts">
+            <img src="https://png.pngtree.com/png-vector/20230728/ourmid/pngtree-coder-clipart-boy-working-with-computer-game-on-the-desk-vector-png-image_6804917.png" alt="" />
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad iure obcaecati adipisci sequi, ex architecto dolorum aliquam. Doloribus pariatur, quae culpa repellendus voluptas enim optio, labore rerum nihil dicta mollitia!
             </p>
