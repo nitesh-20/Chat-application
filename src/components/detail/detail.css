@@ -80,6 +80,7 @@
         }
     }
     button{
+        margin-bottom: 8px;
         padding: 10px;
         width: 100%;
         background-color: rgba(186, 58, 58, 0.943);
