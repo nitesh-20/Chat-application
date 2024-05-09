@@ -7,7 +7,7 @@ const Login = () => {
     file:null,
     url:""
   })
-  const handleAvatar = e =>{
+  const handleAvatar = (e) =>{
     if(e.target.files[0]){
       setAvatar({
         file:e.target.files[0],
@@ -16,9 +16,16 @@ const Login = () => {
     }
   }
 
-  const handleLogin = e =>{
+  const handleRegister = (e) =>{
+    e.preventDefault();
+    const formData = new FormData(e.target)
+    const {username, email, password} = Object.fromEntries(formData);
+    console.log(username);
+  }
+
+  const handleLogin = (e) =>{
     e.preventDefault()
-    toast.success("Heloo")
+    
   }
     
   return (
@@ -34,7 +41,7 @@ const Login = () => {
       <div className="seprator"></div>
       <div className="item">
       <h2>Create An Account</h2>
-        <form >
+        <form  onSubmit={handleRegister}>
           <label htmlFor="file">
             <img src={avatar.url || "./avatar.png"} alt="" />
             Upload An image</label>
