@@ -2,7 +2,9 @@ import { useState } from "react"
 import "./login.css"
 import { toast } from "react-toastify"
 import { createUserWithEmailAndPassword } from "firebase/auth"
-import { auth} from "../../lib/firebase"
+import { auth, db} from "../../lib/firebase"
+import upload from "../../lib/upload"
+import { doc, setDoc } from "firebase/firestore"
 
 
 
@@ -23,10 +25,25 @@ const Login = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target)
-    const { Username, Email, Password } = Object.fromEntries(formData);
+    const { username, email, password } = Object.fromEntries(formData);
 
     try {
-      const res = await createUserWithEmailAndPassword(auth,Email, Password)
+      const res = await createUserWithEmailAndPassword(auth,email, password)
+
+        const imgUrl = await upload(avatar.file)
+
+        await setDoc(doc(db, "users", res.user.uid), {
+          username,
+          email,
+          id:res.user.uid,
+          blocked:[]
+        });
+
+        await setDoc(doc(db, "userchats", res.user.uid), {
+        chats:[],
+        });
+
+        toast.success("Account created! Yu can login now!")
 
     } catch (err) {
       console.log(err);
@@ -57,9 +74,9 @@ const Login = () => {
             <img src={avatar.url || "./avatar.png"} alt="" />
             Upload An image</label>
           <input type="file" id="file" style={{ display: "none" }} onChange={handleAvatar} />
-          <input type="text" placeholder="Username" name="Username" />
-          <input type="text" placeholder="Email" name="Email" />
-          <input type="password" placeholder="Password" name="Password" />
+          <input type="text" placeholder="Username" name="username" />
+          <input type="text" placeholder="Email" name="email" />
+          <input type="password" placeholder="Password" name="password" />
           <button>Sign Up</button>
         </form>
       </div>
