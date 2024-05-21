@@ -1,5 +1,5 @@
 import { doc, getDoc } from '@firebase/firestore'
-import { log } from 'console'
+// import { log } from 'console'
 import { create } from 'zustand'
 import { db } from './firebase'
 
