@@ -80,8 +80,8 @@
         }
     }
     button{
-        margin-bottom: 20px;
-        padding: 10px;
+        margin-bottom: 6px;
+        padding: 6px;
         width: 100%;
         background-color: rgba(186, 58, 58, 0.943);
         color: white;
@@ -89,17 +89,14 @@
         border-radius: 5px;
         cursor: pointer;
 
-        .blockuser{
-            margin-top: 50px;
-        }
-
+        
         &:hover{
             background-color: rgba(210, 12, 5, 0.849);
         }
-
+        
         &.logout{
-            padding: 10px;
-            background-color: #1a73e8;
+            padding: 6px;
+            background-color: #16519d;
         }
     }
 }

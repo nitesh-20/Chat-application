@@ -1,3 +1,4 @@
+import { auth } from "../../lib/firebase"
 import "./detail.css"
 import React from 'react'
 
@@ -64,8 +65,8 @@ const Detail = () => {
           </div>
         </div>
       </div>
-      <button className="blockuser">Block user</button>
-      <button className="logout">Logout</button>
+      <button>Block user</button>
+      <button className="logout" onClick={()=>auth.signOut()}>Logout</button>
     </div>
   )
 }
